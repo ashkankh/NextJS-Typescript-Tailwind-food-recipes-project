@@ -3,6 +3,7 @@ import Food from "../icons/Food";
 import Choice from "../icons/Choice";
 import Clock from "../icons/Clock";
 import Card from "../ui/card";
+import { Typography } from "../ui/Typograhy";
 
 export interface attributeType {
   name: string;
@@ -31,8 +32,8 @@ const items: attributeType[] = [
 function Attribute() {
   return (
     <div className="my-20">
-      <h1 className="text-green-500 font-bold">Why Us?</h1>
-      <div className="flex w-full flex-row justify-center flex-wrap md:justify-start my-10 md:gap-5">
+      <Typography variant="title" color="primary">Why Us?</Typography>
+      <div className="flex w-full flex-row justify-center flex-wrap md:justify-start md:gap-5">
         {items.map((each) => (
           <h1><Card data={each} /></h1>
         ))}
