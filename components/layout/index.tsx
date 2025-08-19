@@ -19,7 +19,7 @@ function Layout({ children }: { children: ReactNode }) {
                 {children}
             </main>
 
-            <footer className='w-full bg-green-500 py-2'>
+            <footer className='w-full bg-green-500 py-2 lg:px-40 md:mt-20'>
                 <div className={`${container}`}>
                     <p className='text-white text-center'>© 2023 Food Recipes</p>
                 </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography } from "../ui/Typograhy";
-
+import Image from "next/image";
 function Banner() {
   return (
     <>
@@ -26,10 +26,7 @@ function Banner() {
           </button>
         </div>
         <div className="flex md:w-1/2 h-auto">
-          <img
-            src="./images/banner.png"
-            className="flex object-contain md:max-h-70 mb-10"
-          ></img>
+          <Image width={1000} height={1000} src="/images/banner.png" alt="img" className="flex object-contain md:max-h-70 mb-10" />
         </div>
       </div>
     </>
