@@ -1,16 +1,13 @@
 import React from "react";
 import { Typography } from "../ui/Typograhy";
 import Image from "next/image";
+import Link from "next/link";
 function Banner() {
   return (
     <>
       <div className="flex  md:flex-row w-full h-auto flex-col-reverse gap-4">
         <div className="flex flex-col h-fit md:w-1/2 ">
-          <Typography
-            variant="title"
-            underline="true"
-            weight="bold"
-          >
+          <Typography variant="title" underline="true" weight="bold">
             Food recipes
           </Typography>
           <p className="flex font-semibold mb-4">
@@ -23,11 +20,17 @@ function Banner() {
             perferendis eaque ratione aliquam non eius!
           </Typography>
           <button className="bg-green-500 w-fit p-1 px-8 text-white rounded-md mt-5">
-            See all
+            <Link href="/menu">See all</Link>
           </button>
         </div>
         <div className="flex md:w-1/2 h-auto">
-          <Image width={1000} height={1000} src="/images/banner.png" alt="img" className="flex object-contain md:max-h-70 mb-10" />
+          <Image
+            width={1000}
+            height={1000}
+            src="/images/banner.png"
+            alt="img"
+            className="flex object-contain md:max-h-70 mb-10"
+          />
         </div>
       </div>
     </>

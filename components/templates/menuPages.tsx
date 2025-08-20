@@ -10,7 +10,7 @@ export function MenuPages({ menuData }: { menuData: menuType[] }) {
         Menu
       </Typography>
 
-      <div className="flex flex-row flex-wrap  justify-center gap-5 md:justify-start mt-12 ">
+      <div className="flex flex-row flex-wrap  justify-center gap-5 md:justify- mt-12 ">
         {menuData.map((menu) => (
           <Card key={menu.id} data={menu} />
         ))}
