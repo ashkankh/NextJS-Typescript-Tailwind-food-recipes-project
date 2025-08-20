@@ -8,7 +8,8 @@ function Banner() {
         <div className="flex flex-col h-fit md:w-1/2 ">
           <Typography
             variant="title"
-            className="border-b-2 w-fit border-green-500"
+            underline="true"
+            weight="bold"
           >
             Food recipes
           </Typography>

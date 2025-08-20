@@ -1,5 +1,5 @@
 import React from "react";
-import { cn } from "@/lib/utils"; // فرض می‌کنیم cn utility دارید
+import { cn } from "@/lib/utils";
 
 export interface TypographyProps {
   variant?:
@@ -26,6 +26,7 @@ export interface TypographyProps {
     | "accent"
     | "error"
     | "success";
+  underline?: "true" | "false";
 }
 
 const variantStyles = {
@@ -79,6 +80,11 @@ const defaultElements = {
   span: "span",
 };
 
+const underlineStyle = {
+  true: "border-b-2  w-fit border-green-500",
+  false: "",
+};
+
 export const Typography: React.FC<TypographyProps> = ({
   variant = "body",
   children,
@@ -87,6 +93,7 @@ export const Typography: React.FC<TypographyProps> = ({
   weight = "normal",
   align = "left",
   color = "base",
+  underline = "false",
   ...props
 }) => {
   const Component = as || defaultElements[variant] || "p";
@@ -96,6 +103,7 @@ export const Typography: React.FC<TypographyProps> = ({
     weightStyles[weight],
     alignStyles[align],
     colorStyles[color],
+    underlineStyle[underline],
     className
   );
 
@@ -106,7 +114,6 @@ export const Typography: React.FC<TypographyProps> = ({
   );
 };
 
-// Component های اختصاصی برای راحتی بیشتر
 export const H1: React.FC<Omit<TypographyProps, "variant">> = (props) => (
   <Typography variant="h1" {...props} />
 );
