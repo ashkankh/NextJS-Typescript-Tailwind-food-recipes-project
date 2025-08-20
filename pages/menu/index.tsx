@@ -15,7 +15,6 @@ export default Menu;
 export async function getStaticProps() {
   const response = await fetch("http://localhost:3001/data");
   const data = await response.json();
-  console.log(data);
 
   return {
     props: {

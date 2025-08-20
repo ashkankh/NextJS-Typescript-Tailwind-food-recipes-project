@@ -1,6 +1,6 @@
 export interface detailsType {
   0: { Cuisine: string };
-  1: { "Recepie type": string };
+  1: { "Recipe Type": string };
   2: { Difficulty: string };
   3: { "Preparation Time": string };
   4: { "Cooking Time": string };
@@ -15,5 +15,5 @@ export interface menuType {
   introduction: string;
   ingredients: string[];
   details: detailsType;
-  recepie: string[];
+  recipe: string[];
 }

@@ -9,7 +9,7 @@ function Layout({ children }: { children: ReactNode }) {
                 <header className="flex flex-row justify-between py-2 items-center">
                     <Link href="/" className='font-extrabold text-xl text-green-500'>Food recipes</Link>
                     <div className='flex flex-row justify-around gap-4 text-gray-500'>
-                        <Link href="/">Menu</Link>
+                        <Link href="/menu">Menu</Link>
                         <Link href="/">Categories</Link>
                     </div>
                 </header>

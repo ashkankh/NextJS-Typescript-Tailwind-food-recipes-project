@@ -4,8 +4,8 @@ import { Typography } from "./ui/Typograhy";
 import Image from "next/image";
 import Location from "./icons/Location";
 import Dollar from "./icons/Dollar";
+import Link from "next/link";
 function Card({ data }: { data: menuType }) {
-  console.log(data);
   return (
     <div className="flex flex-col h-fit w-70 rounded-xl shadow-sm p-3 md:my-2">
       <Image
@@ -43,7 +43,7 @@ function Card({ data }: { data: menuType }) {
           </span>
           <Typography variant="caption">{data.price}$</Typography>
         </div>
-        <button className="flex hover:cursor-pointer">
+        <button className="flex hover:cursor-pointer">  <Link href={`/menu/${data.id}`}>
           <Typography
             variant="caption"
             align="center"
@@ -52,6 +52,7 @@ function Card({ data }: { data: menuType }) {
           >
             See Details
           </Typography>
+        </Link>
         </button>
       </div>
     </div>
