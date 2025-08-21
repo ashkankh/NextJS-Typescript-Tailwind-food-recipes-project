@@ -1,10 +1,14 @@
 import React from "react";
 import { menuType } from "@/types/menu.types";
 import { MenuPages } from "@/components/templates/menuPages";
+import { Typography } from "@/components/ui/Typograhy";
 
 function Menu({ menuData }: { menuData: menuType[] }) {
   return (
     <>
+      <Typography variant="title" underline="true" weight="bold">
+        Menu
+      </Typography>
       <MenuPages menuData={menuData} />
     </>
   );

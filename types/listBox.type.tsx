@@ -2,6 +2,7 @@ export interface OptionItem {
     id: number
     name: string
     value: string
+
 }
 
 export interface dropDownType<T extends OptionItem> {

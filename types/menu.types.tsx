@@ -1,4 +1,5 @@
 export interface detailsType {
+  filter(arg0: (detail: any) => any): unknown;
   0: { Cuisine: string };
   1: { "Recipe Type": string };
   2: { Difficulty: string };
