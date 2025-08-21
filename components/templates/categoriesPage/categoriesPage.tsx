@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react"
+import React, { useState, Fragment, useEffect } from "react"
 import { Typography } from "../../ui/Typograhy"
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from "@headlessui/react"
 import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid"
@@ -18,11 +18,29 @@ function CategoriesPage({ data }: { data: menuType[] }) {
 
   const [difficultySelected, setDifficultySelected] = useState(difficulties[0])
   const [timeSelected, settimeSelected] = useState(time[0])
-  const [imageShow, setImageShow] = useState(false)
+  const [imageShow, setImageShow] = useState(true)
+
+
+  useEffect(() => {
+    if (router.query.difficulty) {
+      const diff = difficulties.find(d => d.value === router.query.difficulty)
+      if (diff) setDifficultySelected(diff)
+    }
+
+    if (router.query.time) {
+      const t = time.find(t => t.value === router.query.time)
+      if (t) settimeSelected(t)
+    }
+
+    if (router.query.difficulty || router.query.time) {
+    setImageShow(false)  
+    }
+    }, [router.query])
 
 
   const clickHandler = () => {
-    setImageShow(true)
+    setImageShow(false)
+
     router.push({
       pathname: "/categories",
       query: {
@@ -43,7 +61,7 @@ function CategoriesPage({ data }: { data: menuType[] }) {
         <DropDown selected={timeSelected} options={time} setSelected={settimeSelected} />
         <button type="button" className="flex rounded-xl bg-green-500 text-white items-center px-10 cursor-pointer" onClick={() => clickHandler()}>Search</button>
       </div>
-      {!imageShow ? <Image src="/images/search.png" alt='Search Best food' height={400} width={400} className="flex mx-auto w-fit "></Image> : <MenuPages menuData={data} />}
+      {imageShow || !data ? <Image src="/images/search.png" alt='Search Best food' height={400} width={400} className="flex mx-auto w-fit "></Image> : <MenuPages menuData={data} />}
 
     </>
   )
