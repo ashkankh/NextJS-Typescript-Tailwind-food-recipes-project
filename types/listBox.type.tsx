@@ -6,8 +6,8 @@ export interface OptionItem {
 }
 
 export interface dropDownType<T extends OptionItem> {
-    selected: T
+    selected: T 
     setSelected: React.Dispatch<React.SetStateAction<T>>
-    options: T[]
+    options: T[],
 }
 

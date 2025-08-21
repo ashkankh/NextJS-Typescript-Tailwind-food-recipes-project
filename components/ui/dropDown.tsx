@@ -9,12 +9,12 @@ import { dropDownType, OptionItem } from "@/types/listBox.type"
 export default function DropDown<T>({ selected, setSelected, options }: dropDownType<OptionItem>) {
   return (
     <>
-      <div className="flex flex-row gap-2 w-60">
+      <div className="flex flex-row gap-2 w-fit md:w-60 ">
         <Listbox value={selected} onChange={setSelected}>
           <div className="relative w-full">
             <ListboxButton
               className={clsx(
-                "relative block w-full rounded-lg bg-gray-50 py-2 pl-3 pr-8 text-left text-md font-bold text-green-600 shadow",
+                "relative block w-full rounded-lg bg-gray-50 py-2 pl-3 pr-8 text-left text-sm md:text-md mx-auto font-bold text-green-600 shadow",
                 "focus:outline-none focus:ring-2 focus:ring-green-500"
               )}
             >
@@ -36,7 +36,7 @@ export default function DropDown<T>({ selected, setSelected, options }: dropDown
             >
               <ListboxOptions
                 className={clsx(
-                  "absolute mt-1 max-h-60 w-full overflow-auto  text-sm rounded-xl border border-gray-200 bg-white shadow p-1 focus:outline-none",
+                  "absolute mt-1 max-h-60 md:w-full overflow-auto  text-sm rounded-xl border border-gray-200 bg-white shadow p-1 focus:outline-none",
                   "transition duration-100 ease-in"
                 )}>
                 {options.map((item) => (

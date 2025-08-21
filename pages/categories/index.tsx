@@ -1,8 +1,7 @@
-import CategoriesPage from '@/components/templates/categoriesPage'
+import CategoriesPage from '@/components/templates/categoriesPage/categoriesPage'
 import { menuType } from '@/types/menu.types';
-import { Tienne } from 'next/font/google';
-import React from 'react'
-import { Context } from 'vm'
+import Image from 'next/image';
+import React, { useState } from 'react'
 
 function index({ data }: { data: menuType[] }) {
     return (
@@ -26,7 +25,7 @@ export async function getServerSideProps(context: any) {
                 ? +detail >= 40
                 : +detail <= +time
             : true;
-    return matchDifficulty && matchTime;
+        return matchDifficulty && matchTime;
     });
     return {
         props: {
