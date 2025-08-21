@@ -1,6 +1,5 @@
 import React from "react";
 import { menuType } from "@/types/menu.types";
-import { Typography } from "../ui/Typograhy";
 import Card from "../card";
 
 export function MenuPages({ menuData }: { menuData: menuType[] }) {

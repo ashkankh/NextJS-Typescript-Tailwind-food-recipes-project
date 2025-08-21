@@ -1,5 +1,4 @@
-import React, { useState, Fragment } from "react"
-import { Typography } from "./Typograhy"
+import { Fragment } from "react"
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from "@headlessui/react"
 import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid"
 import clsx from "clsx"

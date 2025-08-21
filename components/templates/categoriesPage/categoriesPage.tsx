@@ -1,8 +1,5 @@
 import React, { useState, Fragment, useEffect } from "react"
 import { Typography } from "../../ui/Typograhy"
-import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from "@headlessui/react"
-import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid"
-import clsx from "clsx"
 import DropDown from "../../ui/dropDown"
 import { useRouter } from "next/router"
 import { menuType } from "@/types/menu.types"

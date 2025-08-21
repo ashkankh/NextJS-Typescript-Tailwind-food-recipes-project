@@ -1,7 +1,6 @@
 import CategoriesPage from '@/components/templates/categoriesPage/categoriesPage'
 import { menuType } from '@/types/menu.types';
-import Image from 'next/image';
-import React, { useState } from 'react'
+import { Context } from 'vm';
 
 function index({ data }: { data: menuType[] }) {
     return (
@@ -12,7 +11,7 @@ function index({ data }: { data: menuType[] }) {
 }
 
 
-export async function getServerSideProps(context: any) {
+export async function getServerSideProps(context: Context) {
     const { query: { difficulty, time } } = context;
     const res = await fetch("http://localhost:3001/data/")
     const data: menuType[] = await res.json()
