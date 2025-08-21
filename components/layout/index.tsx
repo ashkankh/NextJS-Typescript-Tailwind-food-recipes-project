@@ -10,7 +10,7 @@ function Layout({ children }: { children: ReactNode }) {
                     <Link href="/" className='font-extrabold text-xl text-green-500'>Food recipes</Link>
                     <div className='flex flex-row justify-around gap-4 text-gray-500'>
                         <Link href="/menu">Menu</Link>
-                        <Link href="/">Categories</Link>
+                        <Link href="/categories">Categories</Link>
                     </div>
                 </header>
             </div>
