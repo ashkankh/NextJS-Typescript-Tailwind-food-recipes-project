@@ -10,7 +10,10 @@
     "fakeserver": "json-server --watch db.json --port 3001"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.7",
+    "@heroicons/react": "^2.2.0",
     "clsx": "^2.1.1",
+    "heroicons": "^2.2.0",
     "json-server": "^1.0.0-beta.3",
     "next": "15.4.7",
     "react": "19.1.0",
