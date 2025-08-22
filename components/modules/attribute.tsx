@@ -1,4 +1,4 @@
-import Fast from "../icons/fast";
+import Fast from "../icons/fast_temp";
 import Food from "../icons/food";
 import Choice from "../icons/choice";
 import Clock from "../icons/clock";
