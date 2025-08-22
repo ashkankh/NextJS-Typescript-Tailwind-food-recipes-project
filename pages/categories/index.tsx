@@ -13,7 +13,7 @@ function index({ data }: { data: menuType[] }) {
 
 export async function getServerSideProps(context: Context) {
     const { query: { difficulty, time } } = context;
-    const res = await fetch("http://localhost:3001/data/")
+    const res = await fetch(`${process.env.BASE_URL}/data`)
     const data: menuType[] = await res.json()
 
     const filteredData = data.filter(item => {

@@ -4,7 +4,7 @@ import React from 'react'
 import { useRouter } from 'next/router'
 
 function Details({ data }: { data: menuType }) {
-    const router= useRouter();
+    const router = useRouter();
 
     if (router.isFallback) {
         return <div>Loading...</div>
@@ -19,7 +19,7 @@ export default Details
 
 
 export async function getStaticPaths() {
-    const response = await fetch("http://localhost:3001/data/")
+    const response = await fetch(`${process.env.BASE_URL}/data`)
     const data: menuType[] = await response.json()
     const paths = data.map((each) => ({
         params: {
@@ -35,7 +35,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: { params: { id: string } }) {
     const { id } = context.params
-    const response = await fetch(`http://localhost:3001/data/${id}`)
+    const response = await fetch(`${process.env.BASE_URL}/data/${id}`)
     const data = await response.json();
 
     if (!data.name) {
@@ -48,8 +48,6 @@ export async function getStaticProps(context: { params: { id: string } }) {
         props: {
             data,
         },
-        revalidate: 20,
-
-
+        revalidate: process.env.REVALIDATE ? +process.env.REVALIDATE : 60
     }
 }
