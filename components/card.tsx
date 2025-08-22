@@ -2,8 +2,8 @@ import { menuType } from "@/types/menu.types";
 import React from "react";
 import { Typography } from "./ui/Typograhy";
 import Image from "next/image";
-import Location from "./icons/location_temp";
-import Dollar from "./icons/dollar_temp";
+import Location from "./icons/location";
+import Dollar from "./icons/dollar";
 import Link from "next/link";
 function Card({ data }: { data: menuType }) {
   return (
