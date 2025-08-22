@@ -1,9 +1,15 @@
 import DetailsPage from '@/components/templates/detailsPage'
 import { menuType } from '@/types/menu.types'
-import { notFound } from 'next/navigation'
 import React from 'react'
+import { useRouter } from 'next/router'
 
 function Details({ data }: { data: menuType }) {
+    const router= useRouter();
+
+    if (router.isFallback) {
+        return <div>Loading...</div>
+    }
+
     return (
         <DetailsPage data={data} />
     )
@@ -23,7 +29,7 @@ export async function getStaticPaths() {
 
     return {
         paths,
-        fallback: false,
+        fallback: true,
     }
 }
 
@@ -41,6 +47,9 @@ export async function getStaticProps(context: { params: { id: string } }) {
     return {
         props: {
             data,
-        }
+        },
+        revalidate: 20,
+
+
     }
 }
