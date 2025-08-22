@@ -1,7 +1,7 @@
-import Fast from "../icons/fast";
-import Food from "../icons/food";
-import Choice from "../icons/choice";
-import Clock from "../icons/clock";
+import Fast from "../icons/fast_temp";
+import Food from "../icons/food_temp";
+import Choice from "../icons/choice_temp";
+import Clock from "../icons/clock_temp";
 import Card from "../ui/card";
 
 import { Typography } from "../ui/Typograhy";
