@@ -1,6 +1,6 @@
-import Apple from "../icons/Apple";
+import Apple from "../icons/apple";
 import Tesla from "../icons/Tesla";
-import Binance from "../icons/Binance";
+import Binance from "../icons/binance";
 
 interface customerType {
   id: number;
