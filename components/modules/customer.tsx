@@ -1,5 +1,5 @@
 import Apple from "../icons/apple";
-import Tesla from "../icons/Tesla";
+import Tesla from "../icons/tesla";
 import Binance from "../icons/binance";
 
 interface customerType {
