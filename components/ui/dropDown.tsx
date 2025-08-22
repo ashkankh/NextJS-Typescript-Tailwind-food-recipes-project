@@ -13,7 +13,7 @@ export default function DropDown<T>({ selected, setSelected, options }: dropDown
           <div className="relative w-full">
             <ListboxButton
               className={clsx(
-                "relative block w-full rounded-lg bg-gray-50 py-2 pl-3 pr-8 text-left text-sm md:text-md mx-auto font-bold text-green-600 shadow",
+                "relative text-xs block w-full rounded-lg bg-gray-50 py-2 pl-3 pr-8 text-left  md:text-md mx-auto font-bold text-green-600 shadow",
                 "focus:outline-none focus:ring-2 focus:ring-green-500"
               )}
             >

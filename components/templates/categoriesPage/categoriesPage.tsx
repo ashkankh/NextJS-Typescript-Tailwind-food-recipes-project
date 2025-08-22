@@ -56,9 +56,9 @@ function CategoriesPage({ data }: { data: menuType[] }) {
       <div className="flex flex-row gap-2">
         <DropDown selected={difficultySelected} options={difficulties} setSelected={setDifficultySelected} />
         <DropDown selected={timeSelected} options={time} setSelected={settimeSelected} />
-        <button type="button" className="flex rounded-xl bg-green-500 text-white items-center px-10 cursor-pointer" onClick={() => clickHandler()}>Search</button>
+        <button type="button" className="flex rounded-xl px-2 bg-green-500 text-white items-center md:px-10 cursor-pointer" onClick={() => clickHandler()}>Search</button>
       </div>
-      {imageShow || !data ? <Image src="/images/search.png" alt='Search Best food' height={400} width={400} className="flex mx-auto w-fit "></Image> : <MenuPages menuData={data} />}
+      {imageShow || !data ? <Image src="/images/search.png" alt='Search Best food' height={400} width={400} className="flex mx-auto w-full sm:w-fit mt-10 p-4  "></Image> : <MenuPages menuData={data} />}
 
     </>
   )
