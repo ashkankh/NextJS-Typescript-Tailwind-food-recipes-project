@@ -21,7 +21,7 @@ function Card({ data }: { data: menuType }) {
   };
 
   return (
-    <div className="flex flex-col h-fit w-70 rounded-xl shadow-sm p-3 md:my-2">
+    <div className="relative flex flex-col h-fit w-70 rounded-xl shadow-sm p-3 md:my-2">
       <Image
         src={`/images/${data.id}.jpeg`}
         width={1000}
@@ -29,6 +29,12 @@ function Card({ data }: { data: menuType }) {
         alt={data.name}
         className="flex object-contain items-start rounded-lg"
       />
+      {data.discount > 0 && (
+        <div className="absolute top-5 left-2 z-100 rounded-r-md  rounded-l-xs bg-gradient-to-r from-gray-900 font-extrabold text-sm to-green-400 text-blue-50 p-1 px-4">
+          {data.discount}%
+        </div>
+      )}
+
       <div className="flex flex-col  w-full gap-4 mt-4 p-1">
         <div className="flex flex-row justify-between">
           <Typography
