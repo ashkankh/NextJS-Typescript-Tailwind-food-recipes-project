@@ -6,8 +6,11 @@ import {
   XMarkIcon,
 } from "@heroicons/react/20/solid";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 function CompareModal() {
+  const router = useRouter();
+
   const [showModal, setShowModal] = useState(false);
   const [food1, setFood1] = useState<string | null>(null);
   const [food2, setFood2] = useState<string | null>(null);
@@ -19,6 +22,13 @@ function CompareModal() {
 
   const removeHadlerFood2 = () => {
     localStorage.removeItem("food2");
+  };
+
+  const compareHandler = () => {
+    router.push({
+      pathname: "/compare",
+      query: { food1, food2 },
+    });
   };
 
   useEffect(() => {
@@ -90,15 +100,13 @@ function CompareModal() {
           </div>
 
           <button
-            className={`
-    relative bottom-0 bg-green-600 text-white px-4 py-1 rounded
-    transition-all duration-500 ease-in-out
-    ${
-      !showModal
-        ? "opacity-100 translate-y-0"
-        : "opacity-0 translate-y-20 pointer-events-none"
-    }
-  `}
+            onClick={() => compareHandler()}
+            disabled={!food1 || !food2}
+            className={` disabled:bg-gray-400 disabled:cursor-not-allowed relative bottom-0 bg-green-600 text-white px-4 py-1 rounded transition-all duration-500 ease-in-out hover:cursor-pointer${
+              !showModal
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-20 pointer-events-none"
+            }`}
           >
             Compare
           </button>
