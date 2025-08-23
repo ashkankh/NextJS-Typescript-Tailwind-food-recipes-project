@@ -5,6 +5,7 @@ import Image from "next/image";
 import Location from "./icons/location";
 import Dollar from "./icons/dollar";
 import Link from "next/link";
+import { PercentBadgeIcon } from "@heroicons/react/20/solid";
 
 function Card({ data }: { data: menuType }) {
   const clickHandler = () => {
@@ -31,7 +32,7 @@ function Card({ data }: { data: menuType }) {
       />
       {data.discount > 0 && (
         <div className="absolute top-5 left-2 z-100 rounded-r-md  rounded-l-xs bg-gradient-to-r from-gray-900 font-extrabold text-sm to-green-400 text-blue-50 p-1 px-4">
-          {data.discount}%
+          {data.discount}<Typography variant="span" weight="light" color="success" className="ml-0.5">%</Typography>
         </div>
       )}
 
