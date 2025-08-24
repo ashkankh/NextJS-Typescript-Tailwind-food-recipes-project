@@ -31,7 +31,7 @@ function Card({ data }: { data: menuType }) {
         className="flex object-contain items-start rounded-lg"
       />
       {data.discount > 0 && (
-        <div className="absolute top-5 left-2 z-100 rounded-r-md  rounded-l-xs bg-gradient-to-r from-gray-900 font-extrabold text-sm to-green-400 text-blue-50 p-1 px-4">
+        <div className="absolute top-5 left-2 z-49 rounded-r-md  rounded-l-xs bg-gradient-to-r from-gray-900 font-extrabold text-sm to-green-400 text-blue-50 p-1 px-4">
           {data.discount}<Typography variant="span" weight="light" color="success" className="ml-0.5">%</Typography>
         </div>
       )}
