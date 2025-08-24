@@ -5,7 +5,7 @@ import Image from "next/image";
 import Location from "./icons/location";
 import Dollar from "./icons/dollar";
 import Link from "next/link";
-import { PercentBadgeIcon } from "@heroicons/react/20/solid";
+import { ScaleIcon } from "@heroicons/react/24/outline";
 
 function Card({ data }: { data: menuType }) {
   const clickHandler = () => {
@@ -72,25 +72,17 @@ function Card({ data }: { data: menuType }) {
                 variant="caption"
                 align="center"
                 weight="bold"
-                className="bg-green-500 flex justify-center p-1 rounded-lg w-full text-white"
+                className="bg-green-400 flex justify-center p-2 rounded-lg w-full "
               >
                 See Details
               </Typography>
             </Link>
           </button>
           <button
-            className="flex hover:cursor-pointer"
+            className="flex bg-gray-300 rounded-lg px-6 hover:cursor-pointer"
             onClick={() => clickHandler()}
           >
-            {" "}
-            <Typography
-              variant="caption"
-              align="center"
-              weight="bold"
-              className="bg-gray-500 flex justify-center p-1 rounded-lg w-fit text-white"
-            >
-              compare
-            </Typography>
+            <ScaleIcon width={20} color="#5f5f5f" />
           </button>
         </div>
       </div>
