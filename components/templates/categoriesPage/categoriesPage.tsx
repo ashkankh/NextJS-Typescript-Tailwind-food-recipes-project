@@ -30,9 +30,9 @@ function CategoriesPage({ data }: { data: menuType[] }) {
     }
 
     if (router.query.difficulty || router.query.time) {
-    setImageShow(false)  
+      setImageShow(false)
     }
-    }, [router.query])
+  }, [router.query])
 
 
   const clickHandler = () => {
@@ -53,7 +53,7 @@ function CategoriesPage({ data }: { data: menuType[] }) {
       <Typography variant="title" underline="true" weight="bold">
         Categories
       </Typography>
-      <div className="flex flex-row gap-2">
+      <div className="flex flex-row gap-2 relative z-100 ">
         <DropDown selected={difficultySelected} options={difficulties} setSelected={setDifficultySelected} />
         <DropDown selected={timeSelected} options={time} setSelected={settimeSelected} />
         <button type="button" className="flex rounded-xl px-2 bg-green-500 text-white items-center md:px-10 cursor-pointer" onClick={() => clickHandler()}>Search</button>
