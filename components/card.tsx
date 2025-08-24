@@ -79,7 +79,7 @@ function Card({ data }: { data: menuType }) {
             </Link>
           </button>
           <button
-            className="flex bg-gray-300 rounded-lg px-6 hover:cursor-pointer"
+            className="flex bg-gray-300 rounded-lg px-6 hover:cursor-pointer justify-center items-center"
             onClick={() => clickHandler()}
           >
             <ScaleIcon width={20} color="#5f5f5f" />
